@@ -44,34 +44,20 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php
-                        if (!empty($result)) {
-                            foreach ($result as $row) {
-                        ?>
-                                <tr>
-                                    <td><?php echo $row["id"]; ?></td>
-                                    <td><?php echo $row["nama"]; ?></td>
-                                    <td><?php echo $row["houses"]; ?></td>
-                                    <td><?php echo $row["angkatan"]; ?></td>
-                                    <td>
-                                        <a class="btn btn-secondary" href='?page=edit&obj=Student&id=<?php echo $row['id']; ?>'><i class="far fa-edit"></i> Edit</a>
-                                        <a class="btn btn-danger" href="services/delete.php?level=user&id=<?php echo $row['id']; ?>" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
-                                    </td>
-                                </tr>
-                            <?php
-                            }
-                        } else {
-                            ?>
+                        @foreach ($student as $data)
                             <tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <td>{{ $data['id'] }}</td>
+                                <td>{{ $data['name'] }}</td>
+                                <td>{{ $data['house'] }}</td>
+                                <td>{{ $data['year'] }}</td>
+                                <td>
+                                    <a class="btn btn-secondary" href='#'><i class="far fa-edit"></i> Edit</a>
+                                    <a class="btn btn-danger" href="#" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                </td>
+    
                             </tr>
-                        <?php
-                        }
-
-                        ?>
+                        @endforeach
+                        
                     </tbody>
                 </table>
             </div>

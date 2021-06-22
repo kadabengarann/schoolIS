@@ -9,6 +9,8 @@
 
     <link href="{{ asset('css/all.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('template/css/styles.css') }}" rel="stylesheet" />
+	<script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script>
+
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -52,7 +54,6 @@
 			</footer>
 		</div>
 	</div>
-    <script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script>
     <script src="{{ asset('template/js/script.js') }}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 

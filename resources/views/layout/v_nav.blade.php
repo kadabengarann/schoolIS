@@ -2,46 +2,46 @@
     <div class="sb-sidenav-menu">
         <div class="nav">
             <div class="sb-sidenav-menu-heading">Core</div>
-            <a class="nav-link" href="/">
+            <a class="nav-link {{ request()->is('/') ? 'active' : ''}}" href="/">
                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                 Dashboard
             </a>
             
                 <div class="sb-sidenav-menu-heading"> Admin</div>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseData" aria-expanded="false" aria-controls="collapseData">
+                <a class="nav-link {{ request()->is('students', 'students/add') ? 'active' : 'collapsed'}}" href="#" data-toggle="collapse" data-target="#collapseData" aria-expanded="true" aria-controls="collapseData">
                     <div class="sb-nav-link-icon"><i class="fas fa-user-graduate"></i></div>
                     Student
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseData" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                <div class="collapse {{ request()->is('students', 'students/add') ? 'show' : ''}}" id="collapseData" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/students">Student List</a>
-                        <a class="nav-link" href="/students/add">Add Student</a>
+                        <a class="nav-link {{ request()->is('students') ? 'active' : ''}}" href="/students">Student List</a>
+                        <a class="nav-link {{ request()->is('students/add') ? 'active' : ''}}" href="/students/add">Add Student</a>
                     </nav>
                 </div>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeacher" aria-expanded="false" aria-controls="collapseTeacher">
+                <a class="nav-link {{ request()->is('teachers', 'teachers/add') ? 'active' : 'collapsed'}}" href="#" data-toggle="collapse" data-target="#collapseTeacher" aria-expanded="false" aria-controls="collapseTeacher">
                     <div class="sb-nav-link-icon"><i class="fas fa-chalkboard-teacher"></i></div>
                     Teacher
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseTeacher" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                <div class="collapse {{ request()->is('teachers', 'teachers/add') ? 'show' : ''}}" id="collapseTeacher" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/teachers">Teacher Data</a>
-                        <a class="nav-link" href="/teachers/add">Add Teacher</a>
+                        <a class="nav-link {{ request()->is('teachers') ? 'active' : ''}}" href="/teachers">Teacher Data</a>
+                        <a class="nav-link {{ request()->is('teachers/add') ? 'active' : ''}}" href="/teachers/add">Add Teacher</a>
                     </nav>
                 </div>
                 <div class="sb-sidenav-menu-heading">Setting</div>
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
+                <a class="nav-link {{ request()->is('admins', 'users') ? 'active' : 'collapsed'}}" href="#" data-toggle="collapse" data-target="#collapseUsers" aria-expanded="false" aria-controls="collapseUsers">
                     <div class="sb-nav-link-icon"><i class="fas fa-users-cog"></i></div>
                     Users
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseUsers" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                <div class="collapse {{ request()->is('admins', 'users', 'admins/add', 'users/add') ? 'show' : ''}}" id="collapseUsers" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/admins">Manage Admin</a>
+                        <a class="nav-link {{ request()->is('admins') ? 'active' : ''}}" href="/admins">Manage Admin</a>
                     </nav>
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="/users">Manage User</a>
+                        <a class="nav-link {{ request()->is('users') ? 'active' : ''}}" href="/users">Manage User</a>
                     </nav>
                 </div>
         </div>

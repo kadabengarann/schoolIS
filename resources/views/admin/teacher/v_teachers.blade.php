@@ -42,33 +42,19 @@
                         </tr>
                     </tfoot>
                     <tbody>
-                        <?php
-                        if (!empty($result)) {
-                            foreach ($result as $row) {
-                        ?>
-                                <tr>
-                                    <td><?php echo $row["teacher_id"]; ?></td>
-                                    <td><?php echo $row["name"]; ?></td>
-                                    <td><?php echo $row["subject"]; ?></td>
-                                    <td>
-                                        <a class="btn btn-secondary" href='?page=edit&obj=Teacher&id=<?php echo $row['teacher_id']; ?>'><i class="far fa-edit"></i> Edit</a>
-                                        <a class="btn btn-danger" href="services/delete.php?level=teacher&id=<?php echo $row['teacher_id']; ?>" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
-                                    </td>
-                                </tr>
-                            <?php
-                            }
-                        } else {
-                            ?>
+                        @foreach ($teacher as $data)
                             <tr>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
-                                <td>-</td>
+                                <td>{{ $data['id'] }}</td>
+                                <td>{{ $data['name'] }}</td>
+                                <td>{{ $data['subject'] }}</td>
+                                <td>
+                                    <a class="btn btn-secondary" href='#'><i class="far fa-edit"></i> Edit</a>
+                                    <a class="btn btn-danger" href="#" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                </td>
+    
                             </tr>
-                        <?php
-                        }
-
-                        ?>
+                        @endforeach
+                        
                     </tbody>
                 </table>
             </div>
