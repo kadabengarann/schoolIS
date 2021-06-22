@@ -18,9 +18,14 @@ use App\Http\Controllers\TeachersController;
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/students', [StudentsController::class, 'index']);
-Route::get('/students/add', [StudentsController::class, 'add_page']);
+Route::get('/students/add', [StudentsController::class, 'add']);
+Route::get('/students/add', [StudentsController::class, 'add']);
+Route::get('/students/detail/{id}', [StudentsController::class, 'detail']);
+
 Route::get('/teachers', [TeachersController::class, 'index']);
-Route::get('/teachers/add', [TeachersController::class, 'add_page']);
+Route::get('/teachers/add', [TeachersController::class, 'add']);
+Route::post('/teachers/insert', [TeachersController::class, 'insert']);
+Route::get('/teachers/detail/{id}', [TeachersController::class, 'detail']);
 
 
 Route::view('/admins', 'admin.manage.admin.v_admins');

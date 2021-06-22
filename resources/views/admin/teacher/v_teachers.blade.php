@@ -44,10 +44,11 @@
                     <tbody>
                         @foreach ($teacher as $data)
                             <tr>
-                                <td>{{ $data['id'] }}</td>
-                                <td>{{ $data['name'] }}</td>
-                                <td>{{ $data['subject'] }}</td>
+                                <td>{{ $data->id }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->subject }}</td>
                                 <td>
+                                    <a class="btn btn-info" href='/teachers/detail/{{ $data->id }}'><i class="far fa-edit"></i> Detail</a>
                                     <a class="btn btn-secondary" href='#'><i class="far fa-edit"></i> Edit</a>
                                     <a class="btn btn-danger" href="#" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
                                 </td>
@@ -60,7 +61,7 @@
             </div>
         </div>
         <div class="form-group d-flex align-items-center justify-content-between mb-4 ml-4">
-        <a class="btn btn-primary" href="?page=form_tambah&obj=Teacher"><i class="fas fa-user-plus"></i> Tambah Data</a>
+        <a class="btn btn-primary" href="/teachers/add"><i class="fas fa-user-plus"></i> Tambah Data</a>
                                         </div>
 
 

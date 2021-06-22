@@ -46,11 +46,12 @@
                     <tbody>
                         @foreach ($student as $data)
                             <tr>
-                                <td>{{ $data['id'] }}</td>
-                                <td>{{ $data['name'] }}</td>
-                                <td>{{ $data['house'] }}</td>
-                                <td>{{ $data['year'] }}</td>
+                                <td>{{ $data->id }}</td>
+                                <td>{{ $data->name }}</td>
+                                <td>{{ $data->house }}</td>
+                                <td>{{ $data->year }}</td>
                                 <td>
+                                    <a class="btn btn-info" href='/students/detail/{{ $data->id }}'><i class="far fa-edit"></i> Detail</a>
                                     <a class="btn btn-secondary" href='#'><i class="far fa-edit"></i> Edit</a>
                                     <a class="btn btn-danger" href="#" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
                                 </td>

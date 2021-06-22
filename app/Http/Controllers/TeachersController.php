@@ -20,7 +20,27 @@ class TeachersController extends Controller
         ];
         return view('admin.teacher.v_teachers', $data);
     }
-    public function add_page(){
+    
+    public function detail($id){
+
+        $data = [
+            'teacher' => $this->TeacherModel->detailData($id),
+        ];
+        return view('admin.teacher.v_teacher_detail', $data);
+    }
+
+    public function add(){
         return view('admin.teacher.v_add_teacher');
+    }
+
+    public function insert(){
+        Request()->validate([
+            'id' => 'required|unique:teacher,id|min:10|max:10',
+            'name' => 'required',
+            'subject' => 'required',
+            'address' => 'required',
+            'date' => 'required',
+            'birthplace' => 'required'
+        ]);
     }
 }

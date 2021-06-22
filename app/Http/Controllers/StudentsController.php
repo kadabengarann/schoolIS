@@ -21,7 +21,16 @@ class StudentsController extends Controller
 
         return view('admin.student.v_students', $data);
     }
-    public function add_page(){
+
+    public function add(){
         return view('admin.student.v_add_student');
+    }
+
+    public function detail($id){
+
+        $data = [
+            'student' => $this->StudentModel->detailData($id),
+        ];
+        return view('admin.student.v_student_detail', $data);
     }
 }
