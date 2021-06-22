@@ -1,14 +1,10 @@
 
-## About Laravel
+## About This App
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam id suscipit urna, sit amet aliquet neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas eleifend elit at risus consequat sollicitudin. Nunc et neque nec massa venenatis porta a vel tellus. Nam consequat et orci vel pellentesque. Aenean ac ex nisl. Suspendisse ullamcorper urna eget felis condimentum luctus. Proin erat est, fermentum id mi et, scelerisque pretium nisi. Aenean pellentesque massa vel ligula euismod, at hendrerit urna sodales. Duis sit amet est tortor. Quisque a metus lacinia, bibendum est at, elementum neque. Mauris pellentesque suscipit pretium. Integer tincidunt metus eu ultrices ornare. Maecenas ullamcorper felis tempor velit faucibus egestas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+
+- Check out the site that just deployed  [here](https://school--is.herokuapp.com/).
+
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
