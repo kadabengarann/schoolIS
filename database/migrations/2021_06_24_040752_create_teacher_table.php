@@ -14,7 +14,6 @@ class CreateTeacherTable extends Migration
 		$table->string('name',50)->nullable()->default('NULL');
 		$table->string('subject',25)->nullable()->default('NULL');
 		$table->string('address',250)->nullable()->default('NULL');
-		$table->date('tgl_lahir')->nullable()->default('NULL');
 		$table->string('tmp_lahir',25)->nullable()->default('NULL');
 
         });

@@ -15,7 +15,6 @@ class CreateStudentTable extends Migration
 		$table->string('alamat',250)->nullable()->default('NULL');
 		$table->string('house',25)->nullable()->default('NULL');
 		$table->string('year',4)->nullable()->default('NULL');
-		$table->date('tgl_lahir')->nullable()->default('NULL');
 		$table->string('tmp_lahir',25)->nullable()->default('NULL');
 
         });
