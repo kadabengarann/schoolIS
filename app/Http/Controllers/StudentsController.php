@@ -11,6 +11,7 @@ class StudentsController extends Controller
     public function __construct()
     {
         $this -> StudentModel = new StudentModel();
+        $this->middleware('auth');
     }
 
     public function index(){
@@ -92,5 +93,12 @@ class StudentsController extends Controller
 
         $this->StudentModel->editData($id, $data);
         return redirect()->route('studentDetail', $id)->with('pesan', 'Updated a data !1!1');
+    }
+
+    public function delete($id)
+    {
+        $this->StudentModel->deleteData($id);
+        return redirect()->route('students')->with('pesan', 'Deleted a data !1!1');
+
     }
 }

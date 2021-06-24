@@ -27,4 +27,10 @@ class TeacherModel extends Model
             ->where('id', $id)
             ->update($data);;
     }
+    public function deleteData($id)
+    {
+        DB::table('teacher')
+            ->where('id', $id)
+            ->delete();
+    }
 }

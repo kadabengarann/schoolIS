@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\TeachersController;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,7 @@ Route::post('/student/insert', [StudentsController::class, 'insert']);
 Route::get('/students/detail/{id}', [StudentsController::class, 'detail'])->name('studentDetail');
 Route::get('/students/edit/{id}', [StudentsController::class, 'edit']);
 Route::post('/student/update/{id}', [StudentsController::class, 'update']);
+Route::get('/student/delete/{id}', [StudentsController::class, 'delete']);
 
 Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers');
 Route::get('/teachers/add', [TeachersController::class, 'add']);
@@ -30,9 +32,14 @@ Route::post('/teacher/insert', [TeachersController::class, 'insert']);
 Route::get('/teachers/detail/{id}', [TeachersController::class, 'detail'])->name('teacherDetail');
 Route::get('/teachers/edit/{id}', [TeachersController::class, 'edit']);
 Route::post('/teacher/update/{id}', [TeachersController::class, 'update']);
+Route::get('/teacher/delete/{id}', [TeachersController::class, 'delete']);
 
 
 Route::view('/admins', 'admin.manage.admin.v_admins');
 Route::view('/admins/add', 'admin.manage.admin.v_manage_admin');
 Route::view('/users', 'admin.manage.user.v_users');
 Route::view('/users/add', 'admin.manage.user.v_manage_users');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

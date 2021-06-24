@@ -54,7 +54,9 @@
                                 <td>
                                     <a class="btn btn-info" href='/teachers/detail/{{ $data->id }}'><i class="far fa-edit"></i> Detail</a>
                                     <a class="btn btn-secondary" href='/teachers/edit/{{ $data->id }}'><i class="far fa-edit"></i> Edit</a>
-                                    <a class="btn btn-danger" href="#" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{ $data->id }}">
+                                        <i class="fas fa-trash-alt"></i> Hapus
+                                    </button>
                                 </td>
     
                             </tr>
@@ -71,4 +73,27 @@
 
     </div>
 </div>
+
+@foreach ($teacher as $data)
+<div class="modal fade" id="delete{{ $data->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="confirmModalLabel">Delete confirmation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure want to delete {{ $data->name }} ??
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+          <a href="teacher/delete/{{ $data->id }}" class="btn btn-danger">Yes</a>
+        </div>
+      </div>
+    </div>
+</div>
+    
+@endforeach
 @endsection

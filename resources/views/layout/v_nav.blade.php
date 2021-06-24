@@ -54,7 +54,7 @@
 
             </div>
             <div class="col-ml-auto">
-                Admin <br>
+                {{ Auth::user()->name }} <br>
 
                 
                     <i class="fas fa-user-lock"></i>

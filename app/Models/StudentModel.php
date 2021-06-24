@@ -27,4 +27,11 @@ class StudentModel extends Model
             ->where('id', $id)
             ->update($data);;
     }
+
+    public function deleteData($id)
+    {
+        DB::table('student')
+            ->where('id', $id)
+            ->delete();
+    }
 }
