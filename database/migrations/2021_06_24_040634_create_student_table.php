@@ -11,11 +11,12 @@ class CreateStudentTable extends Migration
         Schema::create('student', function (Blueprint $table) {
 
 		$table->string('id',10);
-		$table->string('name',50)->nullable()->default('NULL');
-		$table->string('alamat',250)->nullable()->default('NULL');
-		$table->string('house',25)->nullable()->default('NULL');
-		$table->string('year',4)->nullable()->default('NULL');
-		$table->string('tmp_lahir',25)->nullable()->default('NULL');
+		$table->string('name',50)->nullable();
+		$table->string('alamat',250)->nullable();
+		$table->string('house',25)->nullable();
+		$table->string('year',4)->nullable();
+		$table->date('tgl_lahir')->nullable();
+		$table->string('tmp_lahir',25)->nullable();
 
         });
     }

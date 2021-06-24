@@ -11,10 +11,11 @@ class CreateTeacherTable extends Migration
         Schema::create('teacher', function (Blueprint $table) {
 
 		$table->string('id',10);
-		$table->string('name',50)->nullable()->default('NULL');
-		$table->string('subject',25)->nullable()->default('NULL');
-		$table->string('address',250)->nullable()->default('NULL');
-		$table->string('tmp_lahir',25)->nullable()->default('NULL');
+		$table->string('name',50)->nullable();
+		$table->string('subject',25)->nullable();
+		$table->string('address',250)->nullable();
+		$table->date('tgl_lahir')->nullable();
+		$table->string('tmp_lahir',25)->nullable();
 
         });
     }
