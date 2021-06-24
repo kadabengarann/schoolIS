@@ -10,6 +10,11 @@
         <li class="breadcrumb-item"><a href="/">Admin</a></li>
         <li class="breadcrumb-item active">Students</li>
     </ol>
+    @if (session('pesan'))
+        <div class="alert alert-success" role="alert">
+            {{ session('pesan') }}
+        </div>
+    @endif
     <div class="card mb-4">
         <div class="card-body">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ut id, numquam sint eum placeat a beatae iusto in quod nam nostrum dolores dolore saepe exercitationem adipisci dicta, quasi aspernatur?</a>
@@ -52,7 +57,7 @@
                                 <td>{{ $data->year }}</td>
                                 <td>
                                     <a class="btn btn-info" href='/students/detail/{{ $data->id }}'><i class="far fa-edit"></i> Detail</a>
-                                    <a class="btn btn-secondary" href='#'><i class="far fa-edit"></i> Edit</a>
+                                    <a class="btn btn-secondary" href='/students/edit/{{ $data->id }}'><i class="far fa-edit"></i> Edit</a>
                                     <a class="btn btn-danger" href="#" onclick="return confirm('Yakin Hapus?')"><i class="fas fa-trash-alt"></i> Hapus</a>
                                 </td>
     

@@ -11,6 +11,9 @@
     <link href="{{ asset('template/css/styles.css') }}" rel="stylesheet" />
 	<script src="{{ asset('js/jquery-3.5.1.slim.min.js') }}"></script>
 
+	<link href="{{ asset('css/') }}/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+
 </head>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -57,10 +60,10 @@
     <script src="{{ asset('template/js/script.js') }}"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
-	<script src="./assets/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+	<script src="{{ asset('js/') }}/jquery.dataTables.min.js" crossorigin="anonymous"></script>
 
-	<script src="./assets/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-	<script src="./assets/js/canvasjs.min.js"></script>
+	<script src="{{ asset('js/') }}/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+	<script src="{{ asset('js/') }}/canvasjs.min.js"></script>
 
 </body>
 </html>

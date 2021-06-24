@@ -23,6 +23,10 @@ class TeachersController extends Controller
     
     public function detail($id){
 
+        if (!$this->TeacherModel->detailData($id)) {
+            abort(404);
+        }
+
         $data = [
             'teacher' => $this->TeacherModel->detailData($id),
         ];
@@ -42,5 +46,51 @@ class TeachersController extends Controller
             'date' => 'required',
             'birthplace' => 'required'
         ]);
+
+        $data = [
+            'id' => Request()->id,
+            'name' => Request()->name,
+            'subject' => Request()->subject,
+            'address' => Request()->address,
+            'tgl_lahir' => Request()->date,
+            'tmp_lahir' => Request()->birthplace
+        ];
+
+        $this->TeacherModel->addData($data);
+        return redirect()->route('teachers')->with('pesan', 'Added new data !1!1');
+    }
+
+    public function edit($id){
+
+        if (!$this->TeacherModel->detailData($id)) {
+            abort(404);
+        }
+        $data = [
+            'teacher' => $this->TeacherModel->detailData($id),
+        ];
+        return view('admin.teacher.v_edit_teacher', $data);
+    }
+
+    public function update($id){
+        Request()->validate([
+            'id' => 'required|min:10|max:10',
+            'name' => 'required',
+            'subject' => 'required',
+            'address' => 'required',
+            'date' => 'required',
+            'birthplace' => 'required'
+        ]);
+
+        $data = [
+            'id' => Request()->id,
+            'name' => Request()->name,
+            'subject' => Request()->subject,
+            'address' => Request()->address,
+            'tgl_lahir' => Request()->date,
+            'tmp_lahir' => Request()->birthplace
+        ];
+
+        $this->TeacherModel->editData($id, $data);
+        return redirect()->route('teacherDetail', $id)->with('pesan', 'Updated a data !1!1');
     }
 }

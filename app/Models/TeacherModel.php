@@ -15,4 +15,16 @@ class TeacherModel extends Model
     public function detailData($id){
         return DB::table('teacher')->where('id', $id)->first();;
     }
+
+    public function addData($data)
+    {
+        return DB::table('teacher')->insert($data);;
+    }
+
+    public function editData($id, $data)
+    {
+        DB::table('teacher')
+            ->where('id', $id)
+            ->update($data);;
+    }
 }

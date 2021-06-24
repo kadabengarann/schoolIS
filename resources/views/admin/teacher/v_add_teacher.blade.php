@@ -5,7 +5,7 @@
 
 
 @section('contentForm')
-<form method="POST" enctype="multipart/form-data" action="/teachers/insert">
+<form method="POST" enctype="multipart/form-data" action="/teacher/insert">
     @csrf
     <div class="row">
         

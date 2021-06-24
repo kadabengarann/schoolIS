@@ -6,5 +6,8 @@
         $("body").toggleClass("sb-sidenav-toggled");
     });
 
+    $(document).ready(function() {
+        $('#dataTable').DataTable();
+      });
 })(jQuery);
 

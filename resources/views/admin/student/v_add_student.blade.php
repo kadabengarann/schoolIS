@@ -5,7 +5,7 @@
 
 
 @section('contentForm')
-<form method="POST" enctype="multipart/form-data" action="/teachers/insert">
+<form method="POST" enctype="multipart/form-data" action="/student/insert">
     @csrf
     <div class="row">
         
@@ -61,17 +61,28 @@
         <div class="col-md-4">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience"><span>Akademik</span></div><br>
-                <div class="col-md-12"><label class="labels">House</label>
-                    <select required class="form-control" id="houses" name="houses">
-                    <option value="" selected disabled hidden>Choose here</option>
+                <div class="col-md-12"><label class="labels">Subject</label>
+                    <select class="form-control @error('house') is-invalid @enderror" id="house" name="house">
+                        <option value="" selected disabled hidden>Choose here</option>
                         <option>Gryffindor</option>
                         <option>Hufflepuff</option>
                         <option>Ravenclaw</option>
-                        <option>Slytherin</option>
+                        <option>Slytherin</option>          
                     </select>
+                        <div class="invalid-feedback">
+                            @error('house')
+                                {{ $message }}
+                            @enderror
+                        </div>
                 </div> <br>
-                <div class="col-md-6"><label class="labels">Angkatan</label><input type="text" class="form-control" value="" placeholder="" name="angktn" required></div>
-                
+                <div class="col-md-6">
+                    <label class="labels">Angkatan</label><input type="text" class="form-control @error('house') is-invalid @enderror" value="" placeholder="" name="year">
+                    <div class="invalid-feedback">
+                        @error('year')
+                            {{ $message }}
+                        @enderror
+                    </div>
+                </div>
                 <div class="mt-5 text-center">
                     <button class="btn btn-success profile-button" name="add_record" type="submit" type="submit" value="add_record"><i class="fas fa-plus-circle"></i> Tambah</button>
                 </div>

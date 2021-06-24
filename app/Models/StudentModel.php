@@ -15,4 +15,16 @@ class StudentModel extends Model
     public function detailData($id){
         return DB::table('student')->where('id', $id)->first();;
     }
+
+    public function addData($data)
+    {
+        return DB::table('student')->insert($data);;
+    }
+
+    public function editData($id, $data)
+    {
+        DB::table('student')
+            ->where('id', $id)
+            ->update($data);;
+    }
 }

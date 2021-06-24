@@ -17,15 +17,19 @@ use App\Http\Controllers\TeachersController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/students', [StudentsController::class, 'index']);
+Route::get('/students', [StudentsController::class, 'index'])->name('students');
 Route::get('/students/add', [StudentsController::class, 'add']);
-Route::get('/students/add', [StudentsController::class, 'add']);
-Route::get('/students/detail/{id}', [StudentsController::class, 'detail']);
+Route::post('/student/insert', [StudentsController::class, 'insert']);
+Route::get('/students/detail/{id}', [StudentsController::class, 'detail'])->name('studentDetail');
+Route::get('/students/edit/{id}', [StudentsController::class, 'edit']);
+Route::post('/student/update/{id}', [StudentsController::class, 'update']);
 
-Route::get('/teachers', [TeachersController::class, 'index']);
+Route::get('/teachers', [TeachersController::class, 'index'])->name('teachers');
 Route::get('/teachers/add', [TeachersController::class, 'add']);
-Route::post('/teachers/insert', [TeachersController::class, 'insert']);
-Route::get('/teachers/detail/{id}', [TeachersController::class, 'detail']);
+Route::post('/teacher/insert', [TeachersController::class, 'insert']);
+Route::get('/teachers/detail/{id}', [TeachersController::class, 'detail'])->name('teacherDetail');
+Route::get('/teachers/edit/{id}', [TeachersController::class, 'edit']);
+Route::post('/teacher/update/{id}', [TeachersController::class, 'update']);
 
 
 Route::view('/admins', 'admin.manage.admin.v_admins');

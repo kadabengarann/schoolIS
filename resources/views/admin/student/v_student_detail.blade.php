@@ -11,47 +11,117 @@
         <li class="breadcrumb-item"><a href="/teachers">Students</a></li>
         <li class="breadcrumb-item active">Detail Student</li>
     </ol>
-        <div class="card mb-4">
-            <div class="card-body">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ut id, numquam sint eum placeat a beatae iusto in quod nam nostrum dolores dolore saepe exercitationem adipisci dicta, quasi aspernatur?</a>
-
+    @if (session('pesan'))
+    <div class="alert alert-success" role="alert">
+        {{ session('pesan') }}
+    </div>
+@endif
+    <div>
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <img src="{{ asset('img/avatar.png') }}" alt="Admin" class="rounded-circle" width="150">
+                  <div class="mt-3">
+                    <h4>{{ $student->name }}</h4>
+                    <p class="text-secondary mb-1">{{ $student->id }}</p>
+                    <p class="text-muted font-size-sm"><i class="fas fa-university"></i> {{ $student->house }}</p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-        <form name="frmAdd" method="POST" action="services/update.php" id="EditData">
-            <div class="row">
-                <div class="col-md-5 border-right">
-                    <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center mb-3">
-                            <h4 class="text-right">Profile</h4>
+          </div>
+          <div class="col-md-8">
+            <ul class="nav nav-pills" id="mytab">
+              <li class="nav-item">
+                <a href="#biodata" data-toggle="tab" class="nav-link m-l active" aria-expanded="true">Biodata Pribadi</a>
+              </li>
+      
+              <li class="nav-item">
+                <a href="#akun" data-toggle="tab" class="nav-link m-l" aria-expanded="true">Akun</a>
+              </li>
+      
+            </ul>
+            <div class="tab-content">
+              <div class="panel tab-pane wrapper-lg  active" id="biodata">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Full Name</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{ $student->name }}
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Angkatan</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{ $student->year }}
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Tempat Tanggal Lahir</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{ $student->tmp_lahir }} , {{ $student->tgl_lahir }}
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Alamat</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                        {{ $student->alamat }}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <div class="mt-5 text-left">
+                            <a class="btn btn-success" href='/students/edit/{{ $student->id }}'><i class="far fa-edit"></i> Edit</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="panel tab-pane wrapper-lg" id="akun">
+                <div class="card mb-5">
+      
+                  <div class="card-body">
+                    <form name="frmUserUpdt" method="POST" action="" id="userUpdt">
+                      <div class="col-xs-5">
+                        <div class="row mt-2">
+                          <div class="col-md-7"><label class="labels">Username</label><input name="usrnm" type="text" class="form-control" value="" readonly="readonly"></div>
                         </div>
                         <div class="row mt-2">
-                            <div class="col-md-12"><label class="labels">NIS</label><input name="id" type="text" class="form-control" value="{{ $student->id }}" readonly="readonly"></div>
-                            <div class="col-md-12"><label class="labels">Nama</label><input name="nama" type="text" class="form-control" value="{{ $student->name }}"></div>
+                          <div class="col-md-7"><label class="labels">Password Lama</label><input name="oldpass" type="password" class="form-control" required></div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6"><label class="labels">Tempat Lahir</label><input name="tmptlhr" type="text" class="form-control" value="{{ $student->tmp_lahir }}"></div>
-                            <div class="col-md-6"><label class="labels">Tanggal Lahir</label><input name="tgllhr" type="date" class="form-control" value="{{ $student->tgl_lahir }}"></div>
+                        <div class="row mt-2">
+                          <div class="col-md-7"><label class="labels">Password Baru</label><input name="newpass" type="password" class="form-control" required></div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-md-12"><label class="labels">Alamat</label><textarea name="alamat" class="form-control" rows="3">{{ $student->alamat }}</textarea></div>
+                        <div class="row mt-2">
+                          <div class="col-md-7"><label class="labels">Re-type Password Baru</label><input name="newpass2" type="password" class="form-control" required></div>
                         </div>
-                    </div>
+                      </div>
+                      <div class="mt-5 text-left">
+                        <button class="btn btn-success profile-button" name="save_password" type="submit" form="userUpdt" type="submit" value="save_password"><i class="fas fa-user-cog"></i> Simpan</button>
+                      </div>
+                    </form>
+                  </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-3 py-5">
-                        <div class="d-flex justify-content-between align-items-center experience"><span>Akademik</span></div><br>
-                        <div class="col-md-12"><label class="labels">House</label>
-                            <input name="houses" type="text" class="form-control" value="{{ $student->house }}">
-                        </div> <br>
-                        <div class="col-md-6"><label class="labels">Angkatan</label><input name="angktn" type="text" class="form-control" value="{{ $student->year }}"></div>
-                        <div class="mt-5 text-center">
-                            <button class="btn btn-success profile-button" name="save_record" type="submit" form="EditData" type="submit" value="save_record"><i class="far fa-edit"></i> Ubah</button>
-                        </div>
-
-                    </div>
-
-                </div>
+              </div>
             </div>
-        </form>
+          </div>
+        </div>
+    </div>
 </div>
 @endsection
