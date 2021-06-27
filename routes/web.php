@@ -25,7 +25,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::get('/hmm', [UserController::class, 'index'])->name('user');
 
@@ -52,7 +52,7 @@ Route::group(['middleware'=>'admin'], function () {
     Route::view('/admins/add', 'admin.manage.admin.v_manage_admin');
     Route::view('/users', 'admin.manage.user.v_users');
     Route::view('/users/add', 'admin.manage.user.v_manage_users');
-    });
+});
 Route::group(['middleware'=>'user'], function () {
     Route::get('user/profile', [UserController::class, 'biodata']);
     Route::get('user/schedule', [UserController::class, 'jadwal']);
