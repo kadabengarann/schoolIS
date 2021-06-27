@@ -1,0 +1,168 @@
+@extends('layout.v_template')
+
+@section('title', 'Schedule')
+
+@section('content')
+<link rel="stylesheet" href="{{ asset('css') }}/jadwal.css">
+
+<div class="container-fluid">
+    <h1 class="my-4">Schedule</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="/">User</a></li>
+        <li class="breadcrumb-item active">Schedule</li>
+    </ol>
+        <div class="timetable-img text-center">
+            <img src="img/content/timetable.png" alt="">
+        </div>
+        <div class="table-responsive">
+            <table class="table table-bordered text-center">
+                <thead>
+                    <tr class="bg-light-gray">
+                        <th class="text-uppercase">Time
+                        </th>
+                        <th class="text-uppercase">Monday</th>
+                        <th class="text-uppercase">Tuesday</th>
+                        <th class="text-uppercase">Wednesday</th>
+                        <th class="text-uppercase">Thursday</th>
+                        <th class="text-uppercase">Friday</th>
+                        <th class="text-uppercase">Saturday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="align-middle">09:00am</td>
+                        <td>
+                            <p class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16 xs-font-size13">History of <br> Magic</p>
+                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                        </td>
+                        <td>
+                            <p class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Charms</p>
+                            <div class="margin-10px-top font-size14">9:00-10:00</div>
+                            <div class="font-size13 text-light-gray">Marta Healy</div>
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">10:00am</td>
+                        <td>
+                            <p class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Potions</p>
+                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                        </td>
+                        <td class="bg-light-gray">
+
+                        </td>
+                        <td>
+                            <p class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Transfiguration</p>
+                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            <div class="font-size13 text-light-gray">Kate Alley</div>
+                        </td>
+                        <td>
+                            <p class="bg-green padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Transfiguration </p>
+                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            <div class="font-size13 text-light-gray">Marta Healy</div>
+                        </td>
+                        <td>
+                            <p class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Potions (/234; <br> block unknown)</p>
+                            <div class="margin-10px-top font-size14">10:00-11:00</div>
+                            <div class="font-size13 text-light-gray">James Smith</div>
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">11:00am</td>
+                        <td>
+                            <p class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</p>
+                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                        </td>
+                        <td>
+                            <p class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</p>
+                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                        </td>
+                        <td>
+                            <p class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</p>
+                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                        </td>
+                        <td>
+                            <p class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</p>
+                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                        </td>
+                        <td>
+                            <p class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</p>
+                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                        </td>
+                        <td>
+                            <p class="bg-lightred padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Break</p>
+                            <div class="margin-10px-top font-size14">11:00-12:00</div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">12:00pm</td>
+                        <td class="bg-light-gray">
+
+                        </td>
+                        <td>
+                            <p class="bg-purple padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Divination</p>
+                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                            <div class="font-size13 text-light-gray">Kate Alley</div>
+                        </td>
+                        <td>
+                            <p class="bg-sky padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Care of Magical <br> Creatures</p>
+                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                        </td>
+                        <td>
+                            <p class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Herbology </p>
+                            <div class="margin-10px-top font-size14">12:00-1:00</div>
+                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="align-middle">01:00pm</td>
+                        <td>
+                            <p class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Defense against <br> the Dark Arts</p>
+                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                            <div class="font-size13 text-light-gray">James Smith</div>
+                        </td>
+                        <td>
+                            <p class="bg-yellow padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Herbology </p>
+                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                            <div class="font-size13 text-light-gray">Ivana Wong</div>
+                        </td>
+                        <td class="bg-light-gray">
+
+                        </td>
+                        <td>
+                            <p class="bg-pink padding-5px-tb padding-15px-lr border-radius-5 margin-10px-bottom text-white font-size16  xs-font-size13">Care of Magical <br> Creatures</p>
+                            <div class="margin-10px-top font-size14">1:00-2:00</div>
+                            <div class="font-size13 text-light-gray">James Smith</div>
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                        <td class="bg-light-gray">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
+
+@endsection

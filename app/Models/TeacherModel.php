@@ -33,4 +33,9 @@ class TeacherModel extends Model
             ->where('id', $id)
             ->delete();
     }
+    public function count()
+    {
+        return DB::table('teacher')
+            ->count();
+    }
 }

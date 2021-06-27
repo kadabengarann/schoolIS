@@ -15,11 +15,7 @@
             {{ session('pesan') }}
         </div>
     @endif
-    <div class="card mb-4">             
-        <div class="card-body">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi ut id, numquam sint eum placeat a beatae iusto in quod nam nostrum dolores dolore saepe exercitationem adipisci dicta, quasi aspernatur?</a>
-        </div>
-    </div>
+
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table mr-1"></i>

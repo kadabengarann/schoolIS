@@ -18,7 +18,8 @@
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php">Portal Akademik</a>
-        <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+		@if (auth()->user())
+        	<button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
         <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
         </div>
         <ul class="navbar-nav ml-auto ml-md-0">
@@ -37,15 +38,17 @@
                 </div>
             </li>
         </ul>
+		@endif
+
     </nav>	
 	<div id="layoutSidenav">
+		
 		<div id="layoutSidenav_nav">
 			@include('layout.v_nav')
 		</div>
 		<div id="layoutSidenav_content">
 			<main>
                 @yield('content')
-
 			</main>
 			<footer class="py-4 bg-light mt-auto">
 				<div class="container-fluid">
