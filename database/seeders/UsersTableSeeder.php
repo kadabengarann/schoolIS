@@ -25,7 +25,8 @@ class UsersTableSeeder extends Seeder
             'email'=>'admin@admin.com',
             'password'=>'$2y$10$Vqn35beeJjnkfyxtPqTjn.Ta56vG96AddvVOaU1ATZX8SaHKn0wvi',
             'level'=>'1'
-        ],
+        ]);
+        DB::table('users')->insert(
         [
             'name'=>'user',
             'email'=>'user@user.com',
